@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Archer : PlayerController
+{
+    public string playerClass = "Archer";
+    private void Start()
+    {
+        Debug.Log(playerClass);
+        NormalAttack();
+        BasicSkill();
+    }
+
+    public override void NormalAttack()
+    {
+        Debug.Log("Archer: Normal Attack");
+        normalAttackInfoTxt = "Archer used a Normal Attack";
+        GameManager.instance.normalAttackTxt.text = normalAttackInfoTxt;
+    }
+    public override void BasicSkill()
+    {
+        Debug.Log("Archer: Basic Skill Attack");
+        basicSkillInfoTxt = "Archer used a Basic Skill Attack";
+        GameManager.instance.basicSkillTxt.text = basicSkillInfoTxt;
+    }
+
+}
