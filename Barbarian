@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class Barbarian : Swordsman
+{
+    public string playerSubClass = "Barbarian";
+    void Start()
+    {
+        Debug.Log(playerSubClass);
+        NormalAttack();
+        BasicSkill();
+
+    }
+
+    public override void NormalAttack()
+    {
+        Debug.Log("Barbarian Attacked");
+        normalAttackInfoTxt = "Barbarian used a Normal Attack";
+        GameManager.instance.normalAttackTxt.text = normalAttackInfoTxt;
+    }
+    public override void BasicSkill()
+    {
+        Debug.Log("Barbarian used Basic Skill");
+        basicSkillInfoTxt = "Barbarian used a Basic Skill Attack";
+        GameManager.instance.basicSkillTxt.text = basicSkillInfoTxt;
+    }
+
+}
