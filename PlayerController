@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+    public string normalAttackInfoTxt;
+    public string basicSkillInfoTxt;
+    public static GameManager instance;
+
+    private void Start()
+    {
+        
+        NormalAttack();
+        BasicSkill();
+
+    }
+    public virtual void NormalAttack()
+    {
+        Debug.Log("Player Normal Attacks");
+        normalAttackInfoTxt = "Player used a Normal Attack";
+        GameManager.instance.normalAttackTxt.text = normalAttackInfoTxt;
+
+    }
+    public virtual void BasicSkill()
+    {
+        Debug.Log("Player Basic Skill Attacks");
+        basicSkillInfoTxt = "Player used a Basic Skill Attack";
+        GameManager.instance.basicSkillTxt.text = basicSkillInfoTxt;
+    }
+}
