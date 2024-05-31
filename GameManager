@@ -1,0 +1,159 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class GameManager : MonoBehaviour
+{
+    public static GameManager instance;
+
+    [Header("Script References")]
+    public PlayerController playerController;
+    public Swordsman swordsman;
+    public Barbarian barbarian;
+    public Assassin assassin;
+    public Archer archer;
+    public Sniper sniper;
+    public Artillery artillery;
+
+    [Header("Button Properties")]
+    public Button playerButton;
+    public Button swordsmanButton;
+    public Button barbarianButton;
+    public Button assassinButton;
+    public Button archerButton;
+    public Button sniperButton;
+    public Button artilleryButton;
+
+    [Header("Display Visuals")]
+    public TextMeshProUGUI normalAttackTxt;
+    public TextMeshProUGUI basicSkillTxt;
+    public TextMeshProUGUI infoGuideTxt;
+    
+
+
+    public void Start()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+
+
+
+    }
+
+    public void PlayerClick()
+    {
+        playerButton.interactable = false;
+
+        playerController.NormalAttack();
+        playerController.BasicSkill();
+
+        infoGuideTxt.text = "Player > ";
+
+        playerController.NormalAttack();
+        playerController.BasicSkill();
+    }
+
+    public void SwordsmanClick()
+    {
+        playerButton.interactable = false;
+        swordsmanButton.interactable = false;
+        archerButton.interactable = false;
+        sniperButton.interactable = false;
+        artilleryButton.interactable = false;
+
+        infoGuideTxt.text = "Player > Swordsman >";
+        swordsman.NormalAttack();
+        swordsman.BasicSkill();
+
+    }
+
+    public void BarbarianClick()
+    {
+  
+        playerButton.interactable = false;
+        swordsmanButton.interactable = false;
+        barbarianButton.interactable = false;
+        assassinButton.interactable = false;
+        archerButton.interactable = false;
+        sniperButton.interactable = false;
+        artilleryButton.interactable = false;
+
+        infoGuideTxt.text = "Player > Swordsman > Barbarian";
+        barbarian.NormalAttack();
+        barbarian.BasicSkill();
+    }
+
+    public void AssassinClick()
+    {
+        
+
+        playerButton.interactable = false;
+        swordsmanButton.interactable = false;
+        barbarianButton.interactable = false;
+        assassinButton.interactable = false;
+        archerButton.interactable = false;
+        sniperButton.interactable = false;
+        artilleryButton.interactable = false;
+
+        infoGuideTxt.text = "Player > Swordsman > Assassin";
+        assassin.NormalAttack();
+        assassin.BasicSkill();
+    }
+
+    public void ArcherClick()
+    {
+       
+
+        swordsmanButton.interactable = false;
+        barbarianButton.interactable = false;
+        assassinButton.interactable = false;
+
+        infoGuideTxt.text = "Player > Archer >";
+        archer.NormalAttack();
+        archer.BasicSkill();
+
+    }
+
+    public void SniperClick()
+    {
+        
+
+        playerButton.interactable = false;
+        swordsmanButton.interactable = false;
+        barbarianButton.interactable = false;
+        assassinButton.interactable = false;
+        archerButton.interactable = false;
+        sniperButton.interactable = false;
+        artilleryButton.interactable = false;
+
+        infoGuideTxt.text = "Player > Archer > Sniper";
+        sniper.NormalAttack();
+        sniper.BasicSkill();
+    }
+
+    public void ArtilleryClick()
+    {
+       
+
+        playerButton.interactable = false;
+        swordsmanButton.interactable = false;
+        barbarianButton.interactable = false;
+        assassinButton.interactable = false;
+        archerButton.interactable = false;
+        sniperButton.interactable = false;
+        artilleryButton.interactable = false;
+
+        infoGuideTxt.text = "Player > Archer > Artillery";
+        artillery.NormalAttack();
+        artillery.BasicSkill();
+    }
+
+}
