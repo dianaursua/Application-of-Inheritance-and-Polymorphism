@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class Swordsman : PlayerController
+{
+    public string playerClass = "Swordsman";
+    private void Start()
+    {
+        NormalAttack();
+        BasicSkill();
+    }
+
+    public override void NormalAttack()
+    {
+        Debug.Log("Swordsman: Normal Attack");
+        normalAttackInfoTxt = "Swordsman used a Normal Attack";
+        GameManager.instance.normalAttackTxt.text = normalAttackInfoTxt;
+    }
+    public override void BasicSkill()
+    {
+        Debug.Log("Swordsman: Basic Skill Attack");
+        basicSkillInfoTxt = "Swordsman used a Basic Skill Attack";
+        GameManager.instance.basicSkillTxt.text = basicSkillInfoTxt;
+    }
+
+}
